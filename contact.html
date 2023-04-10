@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact</title>
+        <link rel="stylesheet" type="text/css" href="css/webfontkit-20230409-184707/stylesheet.css" charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
 <body>
     <header>
         <nav>
@@ -19,5 +21,38 @@
     <main id="content">
         <h1>Contact</h1>
         <section class="flex-container">
-            <div>Email: kevxu@umich.edu</div>
-            <div>Phone: (248)703-2753</div>
+            <div>
+                <h2>Email</h2>
+                <p>kevxu@umich.edu</p>
+            </div>
+            <div>
+                <h2>Phone</h2>
+                <p>(248) 703-2753</p>
+            </div>
+            <div>
+                <h2>Social Media</h2>
+                <a href="https://www.linkedin.com/in/kevin-xu-umich/" target="_blank">LinkedIn</a><br>
+                <!-- <a href="https://github.com/your-github/" target="_blank">GitHub</a> -->
+            </div>
+        </section>
+        <h2>Contact Form</h2>
+        <form action="submit-form.php" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <a href="http://www.onlinewebfonts.com">oNline-web-fonts</a>
+        <p>Kevin Xu &copy; 2023. All rights reserved.</p>
+    </footer>
+</body>
+</html>

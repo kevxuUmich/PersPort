@@ -1,61 +1,164 @@
+@import url('https://db.onlinewebfonts.com/c/64103e95b3ca5ab4ebf815b4f19e00f2?family=Lenora+Bold');
+
+@font-face {
+    font-family: 'Lenora Bold';
+    src: url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.eot');
+    src: url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.eot?#iefix') format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.woff2') format('woff2'),
+    url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.woff') format('woff'),
+    url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.ttf') format('truetype'),
+    url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.svg#Lenora Bold') format('svg');
+}
+
 body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+    font-family: 'Lenora Bold', 'Times New Roman', Times, serif, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6ab;
+}
+
+header {
+    background-color: #eac923;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+}
+footer {
+    background-color: #eac923;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-size-adjust: 50%;
+}
+nav {
+    margin: 1rem 0;
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+h1, h3, h4, h5, h6 {
+    padding-top: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    text-align: center;
+}
+/* Horizontal Gallery*/
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    white-space: clip;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #f0f0f0;
+    padding: 10px;
   }
   
-  header {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
+  /* Apply basic styles for images */
+  .gallery img {
+    max-height: 400px; /* You can adjust the max height as needed */
+    width: auto;
+    object-fit: contain;
+    margin-right: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
   }
   
-  nav {
-      margin: 1rem 0;
+  /* Hover effect */
+  .gallery, .grid-item img:hover {
+    transform: scale(1.05);
+    -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
   
-  nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      transition: background-color 0.3s;
+  /* Scrollbar */
+  .gallery::-webkit-scrollbar {
+    height: 8px;
   }
-  
-  nav a:hover {
-      background-color: #555;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-      margin-bottom: 1rem;
-  }
-  
-  p {
-      margin: 0 0 1rem;
-  }
-  
-  /* Grid Display */
-  .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      grid-gap: 1rem;
-      padding: 1rem;
-  }
-  
-  .grid-item {
-      background-color: #fff;
-      padding: 1rem;
-      border: 1px solid #333;
-      text-align: center;
-  }
-  
-  /* Flexbox */
-  .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 1rem;
-  }
-  
+  .gallery::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 20px;
+    border: 2px solid #f0f0f0;
+}
+
+/* Grid Display */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+.grid-item {
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #333;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.grid-item img{
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+.grid-item:hover img{
+    transform: scale(1.05);
+}
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
+    }
+    .grid-item {
+        padding: 0.5rem;
+        border: 1px solid #333;
+    }
+}
+
+/* Flexbox */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.flex-item {
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #333;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+}
+@media screen and (max-width: 480px) {
+    .flex-container {
+        padding: 0.5rem;
+    }
+    .flex-item {
+        padding: 0.5rem;
+        margin: 0.5rem;
+        min-width: 100px;
+    }
+}
