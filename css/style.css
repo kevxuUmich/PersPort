@@ -1,66 +1,133 @@
 @import url('https://db.onlinewebfonts.com/c/64103e95b3ca5ab4ebf815b4f19e00f2?family=Lenora+Bold');
-
 @font-face {
     font-family: 'Lenora Bold';
-    src: url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.eot');
+    src: url("css/webfontkit-20230409-184707/lenora_premium_bold-webfont.woff");
     src: url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.eot?#iefix') format('embedded-opentype'),
     url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.woff2') format('woff2'),
     url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.woff') format('woff'),
     url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.ttf') format('truetype'),
     url('//db.onlinewebfonts.com/t/64103e95b3ca5ab4ebf815b4f19e00f2.svg#Lenora Bold') format('svg');
 }
-
 body {
     font-family: 'Lenora Bold', 'Times New Roman', Times, serif, sans-serif;
+    font-stretch: 200%;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #ffe6ab;
+    background-color: whitesmoke;
+    /*background-image: url("../images/Claude_Monet_-_The_Water_Lilies_-_The_Clouds_-_Google_Art_Project.jpg");*/
+    background-image: url("../images/Screenshot\ 2023-04-18\ 183654.png");
+    background-position: center;
+    backdrop-filter: blur(2px);
 }
-
 header {
-    background-color: #eac923;
-    color: black;
-    padding: 1rem;
+    background-color: rgb(255, 200, 62);
+    position: relative;
+    margin: auto;
+    padding: 0.1px;
+    top: 10px;
     text-align: center;
+}
+.container{
+    width: 100%;
+    height: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 9em;
+    margin-bottom: 10em;
+}
+.container > h1 {
+    font-size: 120px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-family: 'Gambetta', serif;
+    letter-spacing: -3px;
+    transition: 700ms ease;
+    font-variation-settings: "wght" 311;
+    color: rgb(43, 0, 0);
+    text-align: center;
+}
+.container > h1:hover {
+    font-variation-settings: "wght" 582;
+    letter-spacing: 1px;
 }
 footer {
-    background-color: #eac923;
-    color: black;
+    position: static;
+    bottom: 0;
+    left: 0;
+    background-color: #138b9d;
     padding: 5px;
     text-align: center;
-    text-size-adjust: 50%;
+    text-size-adjust: 1em;
 }
 nav {
-    margin: 1rem 0;
+    margin: 1em 0;
 }
-
 nav a {
     color: #000000;
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 1em 5em;
     transition: background-color 0.3s;
 }
-
 nav a:hover {
-    background-color: #555;
+    background-color: #878787;
+    border-radius: 10px;
 }
-
-h1, h3, h4, h5, h6 {
-    padding-top: 10px;
-    margin-bottom: 1rem;
+nav a.active {
+    text-decoration: underline;
+    color: #1b5d67;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: x-large;
+    padding: 1em 0;
     text-align: center;
 }
-h2 {
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
 p {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
+    text-transform: capitalize;
+    font-weight: lighter;
+    font-style: italic;
+    font-family: 'Gambetta', Times, serif, sans-serif;
     line-height: 1.6;
-    margin: 0 0 1rem;
+    margin: 0 0 1em;
     text-align: center;
+}
+main > p{
+    color: black;
+}
+.skip a{
+    background: white;
+    left: 7px;
+    padding: 6px;
+    -webkit-transition: top 0.1s ease-out;
+    transition: top 0.1s ease-out;
+    z-index: 1;
+}
+.skip a{
+    position: relative;
+    top: -30px;
+}
+.skip a:focus{
+    position: relative;
+    top: 7px;
+    visibility: visible;
+}
+form {
+    width: 75%;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 50px;
+    margin: 20px auto;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+}
+input, textarea {
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    justify-content: center;
 }
 /* Horizontal Gallery*/
 .gallery {
@@ -70,11 +137,12 @@ p {
     scrollbar-width: thin;
     scrollbar-color: #999 #f0f0f0;
     padding: 10px;
-  }
-  
-  /* Apply basic styles for images */
-  .gallery img {
-    max-height: 400px; /* You can adjust the max height as needed */
+}
+.gallery:focus {
+    outline: 1px solid #4a90e2;
+}
+.gallery img {
+    max-height: 300px; 
     width: auto;
     object-fit: contain;
     margin-right: 10px;
@@ -82,83 +150,126 @@ p {
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-  }
-  
-  /* Hover effect */
-  .gallery, .grid-item img:hover {
+}
+/* Hover effect */
+.gallery img:hover {
     transform: scale(1.05);
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Scrollbar */
-  .gallery::-webkit-scrollbar {
-    height: 8px;
-  }
-  .gallery::-webkit-scrollbar-thumb {
+}
+/* Scrollbar */
+.gallery::-webkit-scrollbar {
+    height: 12px;
+}
+.gallery::-webkit-scrollbar-thumb {
     background-color: #999;
     border-radius: 20px;
     border: 2px solid #f0f0f0;
 }
-
 /* Grid Display */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1rem;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 1em;
+    padding: 3em;
+    justify-content: center;
+}
+.grid-container > :first-child{
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/zombie.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.grid-container > :nth-child(2){
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/shell.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+.grid-container > :nth-child(3){
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/Piazza-Icon.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.grid-container > :nth-child(4){
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/Euchre.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.grid-container > :hover{
+    filter: blur(3px);
 }
 .grid-item {
-    background-color: #fff;
-    padding: 1rem;
-    border: 1px solid #333;
+    padding: 1em;
     text-align: center;
     overflow: hidden;
-    position: relative;
+    position: static;
+    background-color: palegoldenrod;
 }
-.grid-item img{
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s;
-}
-.grid-item:hover img{
+.grid-item:hover {
     transform: scale(1.05);
 }
-@media screen and (max-width: 480px) {
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        grid-gap: 0.5rem;
-        padding: 0.5rem;
-    }
-    .grid-item {
-        padding: 0.5rem;
-        border: 1px solid #333;
-    }
-}
-
 /* Flexbox */
 .flex-container {
     display: flex;
     flex-wrap: wrap;
+    padding: 0.5em;
     justify-content: space-around;
-    padding: 1rem;
+    text-align: center;
 }
 .flex-item {
-    background-color: #fff;
-    padding: 1rem;
-    margin: 1rem;
-    border: 1px solid #333;
+    border: 1px solid #333333;
+    background-color: #ffffff;
     text-align: center;
+    min-width: 100px;
+    padding: 0.5em;
+    margin: 0.5em;
     flex: 1;
-    min-width: 200px;
+   
 }
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        grid-gap: 0.7em;
+        padding: 0.7em;
+    }
+    .grid-item {
+        padding: 0.7em;
+        border: 1px solid #333;
+    }
     .flex-container {
-        padding: 0.5rem;
+        padding: 0.7em;
     }
     .flex-item {
-        padding: 0.5rem;
-        margin: 0.5rem;
-        min-width: 100px;
+        padding: 0.7em;
+        margin: 0.7em;
+        min-width: 150px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 1em;
+        padding: 3em;
+    }
+    .grid-item {
+        padding: 1em;
+        border: 1px solid #333333;
+    }
+    .flex-container {
+        padding: 1em;
+    }
+    .flex-item {
+        padding: 1em;
+        margin: 1em;
+        min-width: 250px;
     }
 }
