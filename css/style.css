@@ -257,19 +257,19 @@ input, textarea {
 @media screen and (min-width: 1024px) {
     .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        grid-gap: 1em;
+        grid-gap: 2em;
         padding: 3em;
     }
     .grid-item {
-        padding: 1em;
-        border: 1px solid #333333;
+        padding: 2em;
+        border: 2px solid #333333;
     }
     .flex-container {
-        padding: 1em;
+        padding: 2em;
     }
     .flex-item {
-        padding: 1em;
-        margin: 1em;
+        padding: 2em;
+        margin: 2em;
         min-width: 250px;
     }
 }
